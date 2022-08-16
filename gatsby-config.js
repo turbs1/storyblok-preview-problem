@@ -9,7 +9,16 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: [],
+  plugins: [
+    {
+      resolve: 'gatsby-source-storyblok',
+      options: {
+        accessToken: 'G6kNqlA6sXFfucDG3d5mrQtt',
+        version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
+        localAssets: true, // Optional parameter to download the images to use with Gatsby Image Plugin
+      }
+    }
+  ],
 }
 
 export default config
