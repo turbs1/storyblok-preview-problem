@@ -1,6 +1,4 @@
-import type { GatsbyConfig } from "gatsby"
-
-const config: GatsbyConfig = {
+module.exports = {
   siteMetadata: {
     title: `story`,
     siteUrl: `https://www.yourdomain.tld`,
@@ -11,14 +9,12 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     {
-      resolve: 'gatsby-source-storyblok',
+      resolve: "gatsby-source-storyblok",
       options: {
-        accessToken: 'G6kNqlA6sXFfucDG3d5mrQtt',
-        version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
+        accessToken: "G6kNqlA6sXFfucDG3d5mrQtt",
+        version: process.env.NODE_ENV === "production" ? "published" : "draft",
         localAssets: true, // Optional parameter to download the images to use with Gatsby Image Plugin
-      }
-    }
+      },
+    },
   ],
-}
-
-export default config
+};
